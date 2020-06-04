@@ -4,8 +4,6 @@
 @section('meta_description', _p('pages.login.meta_description', 'Awes.IO Platform Demo'))
 
 @push('head')
-    @include('integration.favicons')
-    @include('integration.ga')
 @endpush
 
 @section('title')
