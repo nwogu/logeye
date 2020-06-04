@@ -9,9 +9,6 @@
     "license": "MIT",
     "require": {
         "php": "^7.1.3",
-        "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.8.*",
-        "laravel/tinker": "^1.0",
         "awes-io/Generator": "^0.1.0",
         "awes-io/auth": "^1.1",
         "awes-io/base-js": "^1.8",
@@ -27,7 +24,11 @@
         "awes-io/repository": "^1.0",
         "awes-io/system-notify": "^1.1",
         "awes-io/table-builder": "^1.0",
-        "awes-io/virtual-tour": "^1.1"
+        "awes-io/virtual-tour": "^1.1",
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "5.8.*",
+        "laravel/tinker": "^1.0",
+        "nwogu/logeye-laravel": "dev-master"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",

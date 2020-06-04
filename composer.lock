@@ -3205,12 +3205,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/nwogu/logeye-laravel.git",
-                "reference": "e7acdc768afeeecd4975286b666f653b8bae969d"
+                "reference": "305fcfd79ecfc0b8b010bbb33583eb6a2eefaadd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nwogu/logeye-laravel/zipball/e7acdc768afeeecd4975286b666f653b8bae969d",
-                "reference": "e7acdc768afeeecd4975286b666f653b8bae969d",
+                "url": "https://api.github.com/repos/nwogu/logeye-laravel/zipball/305fcfd79ecfc0b8b010bbb33583eb6a2eefaadd",
+                "reference": "305fcfd79ecfc0b8b010bbb33583eb6a2eefaadd",
                 "shasum": ""
             },
             "require": {
@@ -3241,7 +3241,7 @@
                 }
             ],
             "description": "monolog laravel wrapper for logeye",
-            "time": "2020-06-04T16:45:05+00:00"
+            "time": "2020-06-04T18:18:35+00:00"
         },
         {
             "name": "opis/closure",
