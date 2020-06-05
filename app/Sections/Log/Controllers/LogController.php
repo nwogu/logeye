@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 use App\Sections\Log\Resources\Log;
 use App\Http\Controllers\Controller;
 use App\Sections\Log\Traits\SiteFilter;
+use Illuminate\Support\Facades\Artisan;
 use App\Sections\Log\Criteria\UserCriteria;
+use App\Sections\Log\Criteria\OrderCriteria;
 use App\Sections\Log\Repositories\LogRepository;
 
 class LogController extends Controller
@@ -61,8 +63,17 @@ class LogController extends Controller
             $this->logs->withCriteria([
                 new UserCriteria([
                     'user_id' => $request->user()->id
-                ])
+                ]),
+                new OrderCriteria([])
             ])->scope($request)->smartPaginate()
         );
+    }
+
+    public function refresh(Request $request)
+    {
+        return notify(
+            _p('Logs fetched successfully. Refresh page')
+        );
+
     }
 }

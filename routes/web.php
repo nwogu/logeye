@@ -27,6 +27,11 @@ Route::middleware('auth')->group(function () {
         Route::get('{id}', 'LogController@show')->name('show');
     });
 
+     # Logs
+     Route::prefix('refresh')->as('logs.')->namespace('\App\Sections\Log\Controllers')->group(function () {
+        Route::post('/', 'LogController@refresh')->name('refresh');
+    });
+
     # Sites
     Route::prefix('sites')->as('sites.')->namespace('\App\Sections\Site\Controllers')->group(function () {
         Route::get('/', 'SiteController@index')->name('index');

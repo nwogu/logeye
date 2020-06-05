@@ -6,7 +6,11 @@
 @push('head')
 @endpush
 
+@section('create_button')
+@endsection
+
 @section('content')
+
     <div class="filter">
         <div class="grid grid-align-center grid-justify-between grid-justify-center--mlg">
             <div class="cell-inline cell-1-1--mlg">

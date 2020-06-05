@@ -7,6 +7,7 @@ use Exception;
 use GuzzleHttp\Client;
 use Illuminate\Console\Command;
 use App\Sections\Log\Models\Log;
+use App\Sections\Site\Models\Site;
 use App\Sections\Site\Repositories\SiteRepository;
 
 class FetchLogs extends Command
@@ -16,7 +17,7 @@ class FetchLogs extends Command
      *
      * @var string
      */
-    protected $signature = 'logs:fetch';
+    protected $signature = 'logs:fetch {--s|site=} {--u|user=}';
 
     /**
      * The console command description.
@@ -43,7 +44,7 @@ class FetchLogs extends Command
     public function handle(SiteRepository $site)
     {
         $client = new Client(['verify' => false]);
-        $sites =  $site->get();
+        $sites =  $this->getSites($site);
 
         foreach ($sites as $site) {
 
@@ -52,6 +53,19 @@ class FetchLogs extends Command
                 $this->resolveResponse($response, $site);
             } catch (Exception $e) { throw $e; continue ;}
         }
+    }
+
+    public function getSites($sites)
+    {
+        if ($site = $this->option('site')) {
+            return array_filter([$sites->find($site)]);
+        }
+
+        if ($user = $this->option('user')) {
+            return User::find((int)$user)->sites;
+        }
+
+        return $sites->get();
     }
 
     protected function resolveResponse($response, $site)
